@@ -39,55 +39,80 @@
     <circle cx="1030" cy="56" r="5" fill="#9c5cff"/><text x="1042" y="60" fill="#a8a8b8">sonnet · change ops</text>
   </g>
 
-  <!-- ===== AGENT TEAM (top band) ===== -->
+  <!-- ===== AGENT TEAM (top band) — 11 specialists in one row ===== -->
   <g>
     <rect x="40" y="100" width="1120" height="160" rx="10" fill="url(#panel)" stroke="#606080" stroke-width="1"/>
-    <text x="60" y="128" fill="#e2e2ec" font-size="14" font-weight="600">The Agent Team</text>
-    <text x="60" y="146" fill="#848494" font-size="11" font-family="JetBrains Mono, ui-monospace, monospace">specialists · 80–150 lines each · runbooks embedded</text>
+    <text x="60" y="128" fill="#e2e2ec" font-size="14" font-weight="600">The Agent Team · 11 specialists</text>
+    <text x="60" y="146" fill="#848494" font-size="11" font-family="JetBrains Mono, ui-monospace, monospace">80–150 lines each · runbooks embedded · model tier color-coded below</text>
 
-    <!-- Specialist cards -->
-    <g font-size="12">
-      <!-- mesh -->
-      <rect x="60" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
-      <text x="130" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">mesh-agent</text>
-      <text x="130" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">peers · routes</text>
-      <circle cx="186" cy="184" r="4" fill="#4f8cff"/>
+    <!-- 11 cards: width 92, gap 12, starting at x=60. Total = 11×92 + 10×12 = 1012+120 = 1132 — too wide.
+         Fix: width 88, gap 12. Total = 11×88 + 10×12 = 968+120 = 1088. Fits. Start at x=70 to center. -->
+    <g font-size="11">
+      <!-- mesh · haiku · blue -->
+      <rect x="70" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="114" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">mesh</text>
+      <text x="114" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">peers</text>
+      <text x="114" y="228" text-anchor="middle" fill="#7aa8ff" font-size="9" font-family="JetBrains Mono, monospace">haiku</text>
 
-      <!-- vault -->
-      <rect x="220" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
-      <text x="290" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">vault-agent</text>
-      <text x="290" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">secrets · identities</text>
-      <circle cx="346" cy="184" r="4" fill="#9c5cff"/>
+      <!-- vault · haiku · blue -->
+      <rect x="170" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="214" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">vault</text>
+      <text x="214" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">secrets</text>
+      <text x="214" y="228" text-anchor="middle" fill="#7aa8ff" font-size="9" font-family="JetBrains Mono, monospace">haiku</text>
 
-      <!-- substrate -->
-      <rect x="380" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
-      <text x="450" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">substrate-agent</text>
-      <text x="450" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">vms · containers</text>
-      <circle cx="506" cy="184" r="4" fill="#9c5cff"/>
+      <!-- substrate · sonnet · purple -->
+      <rect x="270" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      <text x="314" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">substrate</text>
+      <text x="314" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">compute</text>
+      <text x="314" y="228" text-anchor="middle" fill="#9c5cff" font-size="9" font-family="JetBrains Mono, monospace">sonnet</text>
 
-      <!-- edge -->
-      <rect x="540" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
-      <text x="610" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">edge-agent</text>
-      <text x="610" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">dns · tunnels</text>
-      <circle cx="666" cy="184" r="4" fill="#9c5cff"/>
+      <!-- edge · haiku · blue -->
+      <rect x="370" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="414" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">edge</text>
+      <text x="414" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">dns/tunnels</text>
+      <text x="414" y="228" text-anchor="middle" fill="#7aa8ff" font-size="9" font-family="JetBrains Mono, monospace">haiku</text>
 
-      <!-- lan -->
-      <rect x="700" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
-      <text x="770" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">lan-agent</text>
-      <text x="770" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">resolvers · wifi</text>
-      <circle cx="826" cy="184" r="4" fill="#4f8cff"/>
+      <!-- lan · sonnet · purple -->
+      <rect x="470" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      <text x="514" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">lan</text>
+      <text x="514" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">unifi/dns</text>
+      <text x="514" y="228" text-anchor="middle" fill="#9c5cff" font-size="9" font-family="JetBrains Mono, monospace">sonnet</text>
 
-      <!-- telemetry -->
-      <rect x="860" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
-      <text x="930" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">telemetry-agent</text>
-      <text x="930" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">alerts · logs</text>
-      <circle cx="986" cy="184" r="4" fill="#4f8cff"/>
+      <!-- telemetry · sonnet · purple -->
+      <rect x="570" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      <text x="614" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">telemetry</text>
+      <text x="614" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">siem/logs</text>
+      <text x="614" y="228" text-anchor="middle" fill="#9c5cff" font-size="9" font-family="JetBrains Mono, monospace">sonnet</text>
 
-      <!-- flow -->
-      <rect x="1020" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
-      <text x="1090" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">flow-agent</text>
-      <text x="1090" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">workflows · jobs</text>
-      <circle cx="1146" cy="184" r="4" fill="#9c5cff"/>
+      <!-- flow · haiku · blue -->
+      <rect x="670" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="714" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">flow</text>
+      <text x="714" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">workflows</text>
+      <text x="714" y="228" text-anchor="middle" fill="#7aa8ff" font-size="9" font-family="JetBrains Mono, monospace">haiku</text>
+
+      <!-- docs · haiku · blue -->
+      <rect x="770" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="814" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">docs</text>
+      <text x="814" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">journal/log</text>
+      <text x="814" y="228" text-anchor="middle" fill="#7aa8ff" font-size="9" font-family="JetBrains Mono, monospace">haiku</text>
+
+      <!-- security · sonnet · red (cyber) -->
+      <rect x="870" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#ff5a5f" stroke-width="1"/>
+      <text x="914" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">security</text>
+      <text x="914" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">triage</text>
+      <text x="914" y="228" text-anchor="middle" fill="#ff8888" font-size="9" font-family="JetBrains Mono, monospace">sonnet</text>
+
+      <!-- threat-detection · sonnet · red (cyber) -->
+      <rect x="970" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#ff5a5f" stroke-width="1"/>
+      <text x="1014" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">threats</text>
+      <text x="1014" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">correlation</text>
+      <text x="1014" y="228" text-anchor="middle" fill="#ff8888" font-size="9" font-family="JetBrains Mono, monospace">sonnet</text>
+
+      <!-- vuln-mgmt · haiku · red (cyber) -->
+      <rect x="1070" y="170" width="88" height="68" rx="8" fill="#1a1a26" stroke="#ff5a5f" stroke-width="1"/>
+      <text x="1114" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">vulns</text>
+      <text x="1114" y="212" text-anchor="middle" fill="#848494" font-size="9" font-family="JetBrains Mono, monospace">cve/patch</text>
+      <text x="1114" y="228" text-anchor="middle" fill="#ff8888" font-size="9" font-family="JetBrains Mono, monospace">haiku</text>
     </g>
   </g>
 
@@ -99,15 +124,19 @@
     <text x="600" y="378" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">confirmation gates · model tier policy</text>
   </g>
 
-  <!-- Dispatcher → Agent connectors (subtle) -->
-  <g stroke="#606080" stroke-width="1" fill="none" opacity="0.55">
-    <path d="M520,310 C520,280 130,260 130,240"/>
-    <path d="M540,310 C540,280 290,260 290,240"/>
-    <path d="M570,310 C570,280 450,260 450,240"/>
-    <path d="M600,310 L600,240"/>
-    <path d="M630,310 C630,280 770,260 770,240"/>
-    <path d="M660,310 C660,280 930,260 930,240"/>
-    <path d="M680,310 C680,280 1090,260 1090,240"/>
+  <!-- Dispatcher → Agent connectors (subtle, fan out to all 11) -->
+  <g stroke="#606080" stroke-width="1" fill="none" opacity="0.5">
+    <path d="M510,310 C510,280 114,260 114,240"/>
+    <path d="M525,310 C525,280 214,260 214,240"/>
+    <path d="M540,310 C540,280 314,260 314,240"/>
+    <path d="M560,310 C560,280 414,260 414,240"/>
+    <path d="M580,310 C580,280 514,260 514,240"/>
+    <path d="M600,310 L614,240"/>
+    <path d="M620,310 C620,280 714,260 714,240"/>
+    <path d="M640,310 C640,280 814,260 814,240"/>
+    <path d="M660,310 C660,280 914,260 914,240" stroke="#ff5a5f" opacity="0.5"/>
+    <path d="M675,310 C675,280 1014,260 1014,240" stroke="#ff5a5f" opacity="0.5"/>
+    <path d="M690,310 C690,280 1114,260 1114,240" stroke="#ff5a5f" opacity="0.5"/>
   </g>
 
   <!-- User input arrow into dispatcher -->
