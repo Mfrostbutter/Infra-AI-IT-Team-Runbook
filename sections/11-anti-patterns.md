@@ -1,4 +1,4 @@
-# 10 · Anti-patterns
+# 11 · Anti-patterns
 
 > Things that look reasonable, then break things. Read this before you ship.
 

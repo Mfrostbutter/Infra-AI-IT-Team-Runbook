@@ -27,11 +27,12 @@ Planned changes, runbook execution, multi-step coordination across one domain, t
 | `infra-edge` | haiku | DNS / tunnel / access ops are templated |
 | `infra-mesh` | haiku | peer / route reads dominate |
 | `infra-flow` | haiku | inventorying jobs and runs is mechanical |
+| `infra-docs` | haiku | journal-driven doc updates are templated |
 | `infra-lan` | sonnet | dual-resolver consistency, mixed API + SSH discipline |
 | `infra-substrate` | sonnet | cross-host coordination, storage constraints, ProxyJump |
 | `infra-telemetry` | sonnet | correlation, hypothesis generation, IR triage |
 
-5× haiku, 3× sonnet, 0× opus. Opus is parent-invoked, incident-only.
+6× haiku, 3× sonnet, 0× opus. Opus is parent-invoked, incident-only.
 
 ## Escalation triggers (parent overrides up)
 

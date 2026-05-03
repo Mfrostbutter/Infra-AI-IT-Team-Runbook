@@ -82,6 +82,10 @@ You do **not** execute remediation. You hand off to the right specialist with th
 
 Required for: rule/policy mutation, agent unenrollment, manager service restart.
 
+## Journal
+
+After a gated action completes, emit one journal entry per [`policies/audit-trail.md`](../policies/audit-trail.md). During incidents, you also **read** the journal heavily — every other specialist's recent entries are part of your correlation surface.
+
 ## References
 
 - `policies/confirmation-gate.md`

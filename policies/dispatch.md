@@ -13,6 +13,7 @@ Specialist agents do not reliably dispatch to other specialists. Routing happens
 | `infra-lan` | internal network: switches, APs, internal resolvers |
 | `infra-telemetry` | observability: logs, alerts, agent enrollment, IR triage |
 | `infra-flow` | workflow runtime: scheduled jobs, webhooks, automation graphs |
+| `infra-docs` | docs and changelog: reads journal, updates canonical sources |
 
 ## Routing rules
 
@@ -21,6 +22,7 @@ Specialist agents do not reliably dispatch to other specialists. Routing happens
 3. **Security-shaped requests** (incident, exposure, hardening, suspicious telemetry) → `infra-telemetry` first. If scope demands deeper IR, the parent invokes additional specialists as peers.
 4. **Health checks and diagnostics** of a service belong to the infra specialist that owns its domain, not to a separate "executor" agent.
 5. **Reads are cheap, writes have gates.** Read paths can chain freely. Write paths stop at the confirmation gate.
+6. **Docs follow journal entries.** After a gated action lands and the journal entry is written, the parent invokes `infra-docs` to read recent entries and update canonical sources. Doc updates are a separate task, not a side effect inside the original specialist's run.
 
 ## Decision-only router (optional)
 

@@ -72,6 +72,10 @@ curl -X POST -H "X-N8N-API-KEY: $FLOW_API_KEY" \
 
 Required for: activate / deactivate / delete workflow, runtime container restart, API key rotation.
 
+## Journal
+
+After a gated action completes, emit one journal entry per [`policies/audit-trail.md`](../policies/audit-trail.md). Activation/deactivation entries are especially useful for the daily digest — they answer "what automation actually changed shape today."
+
 ## References
 
 - `policies/confirmation-gate.md`

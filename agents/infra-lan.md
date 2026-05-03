@@ -66,6 +66,10 @@ done
 
 Required for: any LAN controller config write, any DNS entry change, any `pihole reloaddns`.
 
+## Journal
+
+After a gated action completes, emit one journal entry per [`policies/audit-trail.md`](../policies/audit-trail.md). For dual-resolver edits, emit one entry per resolver (the journal needs to reflect that the change actually landed on both nodes).
+
 ## References
 
 - `policies/confirmation-gate.md`

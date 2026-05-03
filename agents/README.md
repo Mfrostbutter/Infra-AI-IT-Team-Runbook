@@ -12,6 +12,7 @@ Each agent owns exactly one infrastructure domain. They are 80–150 lines, runb
 | [`infra-lan`](infra-lan.md) | sonnet | internal network |
 | [`infra-telemetry`](infra-telemetry.md) | sonnet | observability and IR |
 | [`infra-flow`](infra-flow.md) | haiku | workflow runtime |
+| [`infra-docs`](infra-docs.md) | haiku | journal-driven docs and changelog |
 
 ## How specialists are structured
 
@@ -46,6 +47,7 @@ Public agent specs use placeholders, not real values:
 | `<HYPERVISOR_HOST>` | your hypervisor (Proxmox, etc.) hostname |
 | `<LAN_CONTROLLER>` | your LAN controller URL |
 | `<TELEMETRY_HOST>` | your SIEM / observability host |
+| `<JOURNAL_URL>` | your central audit journal endpoint |
 | `<DOMAIN>` | your owned domain |
 
 Keep your real values in your secrets vault. Inject at runtime. Never paste them into agent prompts.

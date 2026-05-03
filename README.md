@@ -13,7 +13,8 @@ You will end with:
 - A private peer-to-peer mesh you control
 - Machine-identity secrets, no `.env` on disk
 - Idempotent read paths in every domain
-- Seven specialized agents, dispatched by intent, that get smarter from your daily use
+- A central, append-only journal that captures every change the team makes
+- Eight specialized agents (plus a routing wrapper), dispatched by intent, that get smarter from your daily use
 
 The architecture, on one page:
 
@@ -29,7 +30,7 @@ A monolithic agent loads its full context on every request. A 400-line spec for 
 | 2 | `claude-sonnet-*` | planned changes, multi-step coordination |
 | 3 | `claude-opus-*` | parent-invoked only, multi-domain incidents |
 
-Default fleet: **5× haiku · 4× sonnet · 0× opus** (opus reserved for incident command).
+Default fleet: **6× haiku · 3× sonnet · 0× opus** (opus reserved for incident command).
 
 ## How to read this repo
 
@@ -60,7 +61,8 @@ Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 │   ├── 07-the-agent.md
 │   ├── 08-the-split.md
 │   ├── 09-the-memory.md
-│   └── 10-anti-patterns.md
+│   ├── 10-the-journal.md
+│   └── 11-anti-patterns.md
 ├── agents/                      # specialist agent specs
 │   ├── README.md
 │   ├── infra-router.md
@@ -70,10 +72,12 @@ Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 │   ├── infra-edge.md
 │   ├── infra-lan.md
 │   ├── infra-telemetry.md
-│   └── infra-flow.md
+│   ├── infra-flow.md
+│   └── infra-docs.md
 ├── policies/                    # cross-cutting rules
 │   ├── confirmation-gate.md
 │   ├── dispatch.md
+│   ├── audit-trail.md
 │   └── model-routing-policy.md
 └── examples/                    # ready-to-adapt configs
     └── README.md

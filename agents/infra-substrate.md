@@ -73,6 +73,10 @@ Host my-lxc
 
 Required for: container/VM stop/destroy/migrate, storage edits, SSH config edits, hypervisor service restart.
 
+## Journal
+
+After a gated action completes, emit one journal entry per [`policies/audit-trail.md`](../policies/audit-trail.md). Substrate-level changes are the highest-leverage entries — they are what the docs agent surfaces first when summarizing the day.
+
 ## References
 
 - `policies/confirmation-gate.md`

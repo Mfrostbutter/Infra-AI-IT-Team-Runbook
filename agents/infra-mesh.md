@@ -93,6 +93,20 @@ ssh <MESH_HOST> "cd /opt/<mesh> && docker compose logs --tail=50"
 
 See `policies/confirmation-gate.md`. Required for: route / policy / group destructive edits, setup-key generation, container restart.
 
+## Journal
+
+After a gated action completes, emit one entry to the central journal. Mask any setup-key material. See [`policies/audit-trail.md`](../policies/audit-trail.md).
+
+```bash
+curl -s -X POST -H "Content-Type: application/json" "$JOURNAL_URL/events" -d "$(jq -nc \
+  --arg ts "$(date -u +%FT%TZ)" \
+  --arg agent "infra-mesh" \
+  --arg action "<action>" \
+  --arg target "<target>" \
+  --arg effect "<effect>" \
+  '{ts:$ts, agent:$agent, tier:"haiku", action:$action, target:$target, effect:$effect, gate_ack:"y", outcome:"success"}')"
+```
+
 ## References
 
 - `policies/confirmation-gate.md`

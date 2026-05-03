@@ -69,6 +69,10 @@ Tunnels and Access apps follow the same pattern: list, then mutate with the gate
 
 Required for: DNS record create/update/delete, tunnel create/delete, access app/policy change.
 
+## Journal
+
+After a gated action completes, emit one journal entry per [`policies/audit-trail.md`](../policies/audit-trail.md). Include the zone, record type, and content (the *intended* effect, not raw token values).
+
 ## References
 
 - `policies/confirmation-gate.md`

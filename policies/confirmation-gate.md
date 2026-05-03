@@ -12,6 +12,10 @@ Proceed? (y/n)
 
 Reads and diagnostics never require confirmation. Only writes, restarts, and destructive operations do.
 
+## Gate is not "done" until the journal entry lands
+
+Every gated action emits a journal entry after it completes. The gate is satisfied only when both the operation succeeded **and** the journal entry was accepted. See [`audit-trail.md`](audit-trail.md). A failed journal write is retried; a persistently failing write surfaces as an operator alert, not as a silent skip.
+
 ## Universally gated actions
 
 1. `systemctl restart` / `stop` of any production unit

@@ -71,6 +71,10 @@ vault-cli secrets set MESH_API_TOKEN=<new-value> --path=/infra/mesh
 
 Required for: any secret write, identity creation, or vault container restart.
 
+## Journal
+
+After a gated action completes, emit one journal entry per [`policies/audit-trail.md`](../policies/audit-trail.md). **Never** include the secret value, even masked, in `effect` — describe the change shape only (e.g., `"rotated MESH_API_TOKEN at /infra/mesh"`).
+
 ## References
 
 - `policies/confirmation-gate.md`
