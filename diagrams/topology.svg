@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="diagTitle diagDesc" font-family="Inter, system-ui, sans-serif">
+  <title id="diagTitle">Personal AI Infrastructure Topology</title>
+  <desc id="diagDesc">A specialized agent team dispatches across seven infrastructure domains: mesh, vault, substrate, edge, LAN, telemetry, and workflow.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0f"/>
+      <stop offset="1" stop-color="#0d0d14"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#9c5cff"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12121c"/>
+      <stop offset="1" stop-color="#0f0f18"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7aa8ff"/>
+    </marker>
+    <marker id="arrowDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#606080"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="820" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="40" y="48" fill="#e2e2ec" font-size="22" font-weight="600">Personal AI Infrastructure</text>
+  <text x="40" y="72" fill="#848494" font-size="13" font-family="JetBrains Mono, ui-monospace, monospace">a specialized team, one dispatcher, seven domains</text>
+
+  <!-- Legend -->
+  <g font-size="11" font-family="JetBrains Mono, ui-monospace, monospace">
+    <circle cx="900" cy="56" r="5" fill="#4f8cff"/><text x="912" y="60" fill="#a8a8b8">haiku · read paths</text>
+    <circle cx="1030" cy="56" r="5" fill="#9c5cff"/><text x="1042" y="60" fill="#a8a8b8">sonnet · change ops</text>
+  </g>
+
+  <!-- ===== AGENT TEAM (top band) ===== -->
+  <g>
+    <rect x="40" y="100" width="1120" height="160" rx="10" fill="url(#panel)" stroke="#606080" stroke-width="1"/>
+    <text x="60" y="128" fill="#e2e2ec" font-size="14" font-weight="600">The Agent Team</text>
+    <text x="60" y="146" fill="#848494" font-size="11" font-family="JetBrains Mono, ui-monospace, monospace">specialists · 80–150 lines each · runbooks embedded</text>
+
+    <!-- Specialist cards -->
+    <g font-size="12">
+      <!-- mesh -->
+      <rect x="60" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="130" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">mesh-agent</text>
+      <text x="130" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">peers · routes</text>
+      <circle cx="186" cy="184" r="4" fill="#4f8cff"/>
+
+      <!-- vault -->
+      <rect x="220" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      <text x="290" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">vault-agent</text>
+      <text x="290" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">secrets · identities</text>
+      <circle cx="346" cy="184" r="4" fill="#9c5cff"/>
+
+      <!-- substrate -->
+      <rect x="380" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      <text x="450" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">substrate-agent</text>
+      <text x="450" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">vms · containers</text>
+      <circle cx="506" cy="184" r="4" fill="#9c5cff"/>
+
+      <!-- edge -->
+      <rect x="540" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      <text x="610" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">edge-agent</text>
+      <text x="610" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">dns · tunnels</text>
+      <circle cx="666" cy="184" r="4" fill="#9c5cff"/>
+
+      <!-- lan -->
+      <rect x="700" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="770" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">lan-agent</text>
+      <text x="770" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">resolvers · wifi</text>
+      <circle cx="826" cy="184" r="4" fill="#4f8cff"/>
+
+      <!-- telemetry -->
+      <rect x="860" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      <text x="930" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">telemetry-agent</text>
+      <text x="930" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">alerts · logs</text>
+      <circle cx="986" cy="184" r="4" fill="#4f8cff"/>
+
+      <!-- flow -->
+      <rect x="1020" y="170" width="140" height="70" rx="8" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      <text x="1090" y="195" text-anchor="middle" fill="#e2e2ec" font-weight="600">flow-agent</text>
+      <text x="1090" y="215" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">workflows · jobs</text>
+      <circle cx="1146" cy="184" r="4" fill="#9c5cff"/>
+    </g>
+  </g>
+
+  <!-- ===== DISPATCHER (middle) ===== -->
+  <g>
+    <rect x="460" y="310" width="280" height="80" rx="10" fill="url(#panel)" stroke="url(#brand)" stroke-width="2" filter="url(#glow)"/>
+    <text x="600" y="340" text-anchor="middle" fill="#e2e2ec" font-size="15" font-weight="600">dispatcher</text>
+    <text x="600" y="360" text-anchor="middle" fill="#a8a8b8" font-size="11" font-family="JetBrains Mono, monospace">routes intent → specialist</text>
+    <text x="600" y="378" text-anchor="middle" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">confirmation gates · model tier policy</text>
+  </g>
+
+  <!-- Dispatcher → Agent connectors (subtle) -->
+  <g stroke="#606080" stroke-width="1" fill="none" opacity="0.55">
+    <path d="M520,310 C520,280 130,260 130,240"/>
+    <path d="M540,310 C540,280 290,260 290,240"/>
+    <path d="M570,310 C570,280 450,260 450,240"/>
+    <path d="M600,310 L600,240"/>
+    <path d="M630,310 C630,280 770,260 770,240"/>
+    <path d="M660,310 C660,280 930,260 930,240"/>
+    <path d="M680,310 C680,280 1090,260 1090,240"/>
+  </g>
+
+  <!-- User input arrow into dispatcher -->
+  <g>
+    <text x="600" y="290" text-anchor="middle" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">intent</text>
+    <path d="M600,295 L600,308" stroke="#7aa8ff" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+  </g>
+
+  <!-- ===== DOMAIN LAYER (bottom band) ===== -->
+  <g>
+    <rect x="40" y="430" width="1120" height="350" rx="10" fill="url(#panel)" stroke="#606080" stroke-width="1"/>
+    <text x="60" y="458" fill="#e2e2ec" font-size="14" font-weight="600">Infrastructure Domains</text>
+    <text x="60" y="476" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">each domain owned by exactly one specialist · idempotent read paths · machine identity</text>
+
+    <!-- Row 1: Mesh / Vault / Substrate / Edge -->
+    <g font-size="12">
+      <!-- Mesh (NetBird-style) -->
+      <g transform="translate(70,500)">
+        <rect width="240" height="120" rx="8" fill="#0d0d14" stroke="#4f8cff" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#7aa8ff" font-size="11" font-family="JetBrains Mono, monospace">01 · mesh</text>
+        <text x="16" y="50" fill="#e2e2ec" font-size="14" font-weight="600">overlay network</text>
+        <text x="16" y="72" fill="#a8a8b8" font-size="11">peer mesh · zero-trust routes</text>
+        <text x="16" y="92" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">prereq for everything else</text>
+        <circle cx="220" cy="22" r="4" fill="#4f8cff"/>
+      </g>
+
+      <!-- Vault -->
+      <g transform="translate(330,500)">
+        <rect width="240" height="120" rx="8" fill="#0d0d14" stroke="#9c5cff" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace">02 · vault</text>
+        <text x="16" y="50" fill="#e2e2ec" font-size="14" font-weight="600">secrets &amp; identity</text>
+        <text x="16" y="72" fill="#a8a8b8" font-size="11">machine identities · env injection</text>
+        <text x="16" y="92" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">no .env on disk</text>
+        <circle cx="220" cy="22" r="4" fill="#9c5cff"/>
+      </g>
+
+      <!-- Substrate -->
+      <g transform="translate(590,500)">
+        <rect width="240" height="120" rx="8" fill="#0d0d14" stroke="#9c5cff" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace">03 · substrate</text>
+        <text x="16" y="50" fill="#e2e2ec" font-size="14" font-weight="600">compute &amp; storage</text>
+        <text x="16" y="72" fill="#a8a8b8" font-size="11">vms · containers · ssh topology</text>
+        <text x="16" y="92" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">api token + ssh key</text>
+        <circle cx="220" cy="22" r="4" fill="#9c5cff"/>
+      </g>
+
+      <!-- Edge -->
+      <g transform="translate(850,500)">
+        <rect width="240" height="120" rx="8" fill="#0d0d14" stroke="#9c5cff" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace">04 · edge</text>
+        <text x="16" y="50" fill="#e2e2ec" font-size="14" font-weight="600">public surface</text>
+        <text x="16" y="72" fill="#a8a8b8" font-size="11">dns · tunnels · access policy</text>
+        <text x="16" y="92" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">scoped api token</text>
+        <circle cx="220" cy="22" r="4" fill="#9c5cff"/>
+      </g>
+    </g>
+
+    <!-- Row 2: LAN / Telemetry / Flow -->
+    <g font-size="12">
+      <g transform="translate(200,640)">
+        <rect width="240" height="120" rx="8" fill="#0d0d14" stroke="#4f8cff" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#7aa8ff" font-size="11" font-family="JetBrains Mono, monospace">05 · lan</text>
+        <text x="16" y="50" fill="#e2e2ec" font-size="14" font-weight="600">internal network</text>
+        <text x="16" y="72" fill="#a8a8b8" font-size="11">resolvers · wifi · internal dns</text>
+        <text x="16" y="92" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">redundant resolvers</text>
+        <circle cx="220" cy="22" r="4" fill="#4f8cff"/>
+      </g>
+
+      <g transform="translate(460,640)">
+        <rect width="240" height="120" rx="8" fill="#0d0d14" stroke="#4f8cff" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#7aa8ff" font-size="11" font-family="JetBrains Mono, monospace">06 · telemetry</text>
+        <text x="16" y="50" fill="#e2e2ec" font-size="14" font-weight="600">observability</text>
+        <text x="16" y="72" fill="#a8a8b8" font-size="11">alerts · logs · agent enrollment</text>
+        <text x="16" y="92" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">read-mostly</text>
+        <circle cx="220" cy="22" r="4" fill="#4f8cff"/>
+      </g>
+
+      <g transform="translate(720,640)">
+        <rect width="240" height="120" rx="8" fill="#0d0d14" stroke="#9c5cff" stroke-width="1.2"/>
+        <text x="16" y="26" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace">07 · flow</text>
+        <text x="16" y="50" fill="#e2e2ec" font-size="14" font-weight="600">workflow runtime</text>
+        <text x="16" y="72" fill="#a8a8b8" font-size="11">scheduled jobs · webhooks</text>
+        <text x="16" y="92" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace">per-instance api key</text>
+        <circle cx="220" cy="22" r="4" fill="#9c5cff"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Specialist → Domain connectors -->
+  <g stroke="#606080" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="3 3" marker-end="url(#arrowDim)">
+    <path d="M130,240 C130,360 190,440 190,498"/>
+    <path d="M290,240 C290,360 450,440 450,498"/>
+    <path d="M450,240 C450,360 710,440 710,498"/>
+    <path d="M610,240 C610,360 970,440 970,498"/>
+    <path d="M770,240 C770,400 320,560 320,638"/>
+    <path d="M930,240 C930,400 580,560 580,638"/>
+    <path d="M1090,240 C1090,420 840,560 840,638"/>
+  </g>
+
+  <!-- Footer note -->
+  <text x="600" y="800" text-anchor="middle" fill="#606080" font-size="10" font-family="JetBrains Mono, monospace">ageniusailabs.com · Infra-AI-IT-Team-Runbook</text>
+</svg>

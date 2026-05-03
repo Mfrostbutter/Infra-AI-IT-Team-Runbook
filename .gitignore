@@ -1,0 +1,26 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*_token
+secrets/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+node_modules/
+__pycache__/
+*.pyc
+
+# Local notes
+NOTES.md
+SCRATCH.md
+private/

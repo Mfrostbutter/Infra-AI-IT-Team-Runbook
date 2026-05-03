@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="tbTitle tbDesc" font-family="Inter, system-ui, sans-serif">
+  <title id="tbTitle">Task burden: monolith vs. specialist team</title>
+  <desc id="tbDesc">Left: one agent receives every task at once, radiating amber labels. Right: six specialists each own one or two tasks in cool blue.</desc>
+
+  <defs>
+    <radialGradient id="tbBgL" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0" stop-color="#3a2510" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#0a0a0f" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="tbBgR" cx="0.5" cy="0.5" r="0.8">
+      <stop offset="0" stop-color="#0d2030" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0a0a0f" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="agentNode" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c79bff"/>
+      <stop offset="0.6" stop-color="#9c5cff"/>
+      <stop offset="1" stop-color="#5a2db8"/>
+    </radialGradient>
+    <filter id="tbGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tbHotGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="tbGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1a1a26" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="#0a0a0f"/>
+  <rect width="600" height="800" fill="url(#tbBgL)"/>
+  <rect x="600" width="600" height="800" fill="url(#tbBgR)"/>
+  <rect width="1200" height="800" fill="url(#tbGrid)" opacity="0.4"/>
+
+  <!-- Divider -->
+  <line x1="600" y1="40" x2="600" y2="760" stroke="#606080" stroke-width="1" stroke-dasharray="6 8"/>
+
+  <!-- Headers -->
+  <text x="300" y="50" text-anchor="middle" fill="#f2b33d" font-size="13" font-family="JetBrains Mono, monospace" letter-spacing="0.15em">ONE AGENT · EVERY TASK</text>
+  <text x="900" y="50" text-anchor="middle" fill="#7aa8ff" font-size="13" font-family="JetBrains Mono, monospace" letter-spacing="0.15em">EIGHT AGENTS · OWNED DOMAINS</text>
+
+  <!-- ====== LEFT: monolith with radiating tasks ====== -->
+  <g>
+    <!-- Hot glow halo behind agent -->
+    <circle cx="300" cy="400" r="180" fill="#f2b33d" opacity="0.05"/>
+    <circle cx="300" cy="400" r="120" fill="#f2b33d" opacity="0.07"/>
+    <circle cx="300" cy="400" r="70" fill="#f2b33d" opacity="0.09"/>
+
+    <!-- Radiating lines -->
+    <g stroke="#b8843d" stroke-width="0.8" opacity="0.55">
+      <line x1="300" y1="400" x2="80"  y2="160"/>
+      <line x1="300" y1="400" x2="200" y2="120"/>
+      <line x1="300" y1="400" x2="320" y2="100"/>
+      <line x1="300" y1="400" x2="440" y2="120"/>
+      <line x1="300" y1="400" x2="540" y2="160"/>
+      <line x1="300" y1="400" x2="120" y2="220"/>
+      <line x1="300" y1="400" x2="100" y2="290"/>
+      <line x1="300" y1="400" x2="60"  y2="380"/>
+      <line x1="300" y1="400" x2="80"  y2="470"/>
+      <line x1="300" y1="400" x2="120" y2="560"/>
+      <line x1="300" y1="400" x2="180" y2="640"/>
+      <line x1="300" y1="400" x2="270" y2="700"/>
+      <line x1="300" y1="400" x2="370" y2="710"/>
+      <line x1="300" y1="400" x2="470" y2="660"/>
+      <line x1="300" y1="400" x2="540" y2="590"/>
+      <line x1="300" y1="400" x2="560" y2="490"/>
+      <line x1="300" y1="400" x2="560" y2="400"/>
+      <line x1="300" y1="400" x2="540" y2="310"/>
+      <line x1="300" y1="400" x2="490" y2="240"/>
+      <line x1="300" y1="400" x2="400" y2="180"/>
+      <line x1="300" y1="400" x2="200" y2="200"/>
+      <line x1="300" y1="400" x2="160" y2="350"/>
+      <line x1="300" y1="400" x2="170" y2="450"/>
+      <line x1="300" y1="400" x2="220" y2="540"/>
+      <line x1="300" y1="400" x2="320" y2="600"/>
+      <line x1="300" y1="400" x2="430" y2="540"/>
+      <line x1="300" y1="400" x2="450" y2="430"/>
+      <line x1="300" y1="400" x2="430" y2="340"/>
+      <line x1="300" y1="400" x2="350" y2="280"/>
+      <line x1="300" y1="400" x2="240" y2="280"/>
+    </g>
+
+    <!-- Task labels (amber tones) -->
+    <g font-size="13" fill="#f2b33d" font-family="Inter, system-ui, sans-serif">
+      <text x="20"  y="160">DNS lookup</text>
+      <text x="170" y="115">secret rotation</text>
+      <text x="290" y="92" text-anchor="middle">cluster migration</text>
+      <text x="400" y="115">security tools</text>
+      <text x="500" y="158">firewall rule</text>
+      <text x="60"  y="220">VPN enrollment</text>
+      <text x="40"  y="295">security triage</text>
+      <text x="0"   y="385">container health</text>
+      <text x="20"  y="475">firewall rule</text>
+      <text x="60"  y="565">cluster migration</text>
+      <text x="120" y="645">security triage</text>
+      <text x="220" y="715">DNS sync</text>
+      <text x="330" y="725">backup check</text>
+      <text x="440" y="665">cluster migration</text>
+      <text x="510" y="595">log correlation</text>
+      <text x="510" y="495">firewall rule</text>
+      <text x="500" y="405">workflow debug</text>
+      <text x="475" y="315">backup check</text>
+      <text x="430" y="245">certificate renewal</text>
+      <text x="350" y="180">log pollution</text>
+      <text x="120" y="200">secret rotation</text>
+      <text x="100" y="350" font-size="12">backup check</text>
+      <text x="105" y="450" font-size="12">cluster migration</text>
+      <text x="155" y="540" font-size="12">DNS sync</text>
+      <text x="265" y="610" font-size="12">workflow debug</text>
+      <text x="380" y="540" font-size="12">container health</text>
+      <text x="395" y="430" font-size="12">backup check</text>
+      <text x="380" y="345" font-size="12">certificate renewal</text>
+      <text x="305" y="285" font-size="12">security triage</text>
+      <text x="195" y="285" font-size="12">DNS lookup</text>
+    </g>
+
+    <!-- Central agent node -->
+    <g filter="url(#tbHotGlow)">
+      <circle cx="300" cy="400" r="34" fill="url(#agentNode)"/>
+      <circle cx="300" cy="400" r="22" fill="#9c5cff" opacity="0.7"/>
+      <circle cx="300" cy="400" r="10" fill="#e9d4ff"/>
+    </g>
+    <text x="300" y="465" text-anchor="middle" fill="#e2e2ec" font-size="13" font-weight="600">agent</text>
+  </g>
+
+  <!-- ====== RIGHT: specialists with 1-2 tasks each ====== -->
+  <g>
+    <!-- Helper layout: 3 rows × 2 cols -->
+    <!-- row 1 -->
+    <g>
+      <line x1="755" y1="190" x2="820" y2="170" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="755" y1="190" x2="820" y2="210" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <g filter="url(#tbGlow)">
+        <circle cx="745" cy="190" r="18" fill="url(#agentNode)"/>
+        <circle cx="745" cy="190" r="6" fill="#e9d4ff"/>
+      </g>
+      <text x="745" y="232" text-anchor="middle" fill="#e2e2ec" font-size="12" font-weight="500">infra-mesh</text>
+      <text x="828" y="174" fill="#7aa8ff" font-size="12">DNS sync</text>
+      <text x="828" y="216" fill="#7aa8ff" font-size="12">VPN enrollment</text>
+    </g>
+    <g>
+      <line x1="1055" y1="190" x2="1120" y2="170" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="1055" y1="190" x2="1120" y2="210" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <g filter="url(#tbGlow)">
+        <circle cx="1045" cy="190" r="18" fill="url(#agentNode)"/>
+        <circle cx="1045" cy="190" r="6" fill="#e9d4ff"/>
+      </g>
+      <text x="1045" y="232" text-anchor="middle" fill="#e2e2ec" font-size="12" font-weight="500">infra-vault</text>
+      <text x="1128" y="174" fill="#7aa8ff" font-size="12">secret rotation</text>
+      <text x="1128" y="216" fill="#7aa8ff" font-size="12">certificate renewal</text>
+    </g>
+
+    <!-- row 2 -->
+    <g>
+      <line x1="755" y1="400" x2="820" y2="380" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="755" y1="400" x2="820" y2="420" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <g filter="url(#tbGlow)">
+        <circle cx="745" cy="400" r="18" fill="url(#agentNode)"/>
+        <circle cx="745" cy="400" r="6" fill="#e9d4ff"/>
+      </g>
+      <text x="745" y="442" text-anchor="middle" fill="#e2e2ec" font-size="12" font-weight="500">infra-substrate</text>
+      <text x="828" y="384" fill="#7aa8ff" font-size="12">container health</text>
+      <text x="828" y="426" fill="#7aa8ff" font-size="12">cluster migration</text>
+    </g>
+    <g>
+      <line x1="1055" y1="400" x2="1120" y2="380" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="1055" y1="400" x2="1120" y2="420" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <g filter="url(#tbGlow)">
+        <circle cx="1045" cy="400" r="18" fill="url(#agentNode)"/>
+        <circle cx="1045" cy="400" r="6" fill="#e9d4ff"/>
+      </g>
+      <text x="1045" y="442" text-anchor="middle" fill="#e2e2ec" font-size="12" font-weight="500">infra-edge</text>
+      <text x="1128" y="384" fill="#7aa8ff" font-size="12">DNS lookup</text>
+      <text x="1128" y="426" fill="#7aa8ff" font-size="12">firewall rule</text>
+    </g>
+
+    <!-- row 3 -->
+    <g>
+      <line x1="755" y1="610" x2="820" y2="590" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="755" y1="610" x2="820" y2="630" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <g filter="url(#tbGlow)">
+        <circle cx="745" cy="610" r="18" fill="url(#agentNode)"/>
+        <circle cx="745" cy="610" r="6" fill="#e9d4ff"/>
+      </g>
+      <text x="745" y="652" text-anchor="middle" fill="#e2e2ec" font-size="12" font-weight="500">infra-telemetry</text>
+      <text x="828" y="594" fill="#7aa8ff" font-size="12">security triage</text>
+      <text x="828" y="636" fill="#7aa8ff" font-size="12">log correlation</text>
+    </g>
+    <g>
+      <line x1="1055" y1="610" x2="1120" y2="590" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="1055" y1="610" x2="1120" y2="630" stroke="#4f8cff" stroke-width="1.2" opacity="0.7"/>
+      <g filter="url(#tbGlow)">
+        <circle cx="1045" cy="610" r="18" fill="url(#agentNode)"/>
+        <circle cx="1045" cy="610" r="6" fill="#e9d4ff"/>
+      </g>
+      <text x="1045" y="652" text-anchor="middle" fill="#e2e2ec" font-size="12" font-weight="500">infra-flow</text>
+      <text x="1128" y="594" fill="#7aa8ff" font-size="12">workflow debug</text>
+      <text x="1128" y="636" fill="#7aa8ff" font-size="12">backup check</text>
+    </g>
+  </g>
+
+  <!-- Footer caption -->
+  <g>
+    <rect x="0" y="745" width="1200" height="55" fill="#0d0d14"/>
+    <text x="600" y="780" text-anchor="middle" fill="#e2e2ec" font-size="20" font-weight="600">Same Workload. Eight Owners.</text>
+  </g>
+</svg>
