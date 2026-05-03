@@ -31,7 +31,7 @@
 
   <!-- Headers -->
   <text x="300" y="50" text-anchor="middle" fill="#f2b33d" font-size="14" font-family="JetBrains Mono, ui-monospace, monospace" letter-spacing="0.18em" font-weight="600">ONE AGENT · EVERY TASK</text>
-  <text x="880" y="50" text-anchor="middle" fill="#7aa8ff" font-size="14" font-family="JetBrains Mono, ui-monospace, monospace" letter-spacing="0.18em" font-weight="600">EIGHT AGENTS · OWNED DOMAINS</text>
+  <text x="880" y="50" text-anchor="middle" fill="#7aa8ff" font-size="14" font-family="JetBrains Mono, ui-monospace, monospace" letter-spacing="0.18em" font-weight="600">SPECIALISTS · OWNED DOMAINS</text>
 
   <!-- ====== LEFT: monolith with radiating labels ====== -->
   <g>
@@ -205,5 +205,5 @@
 
   <!-- Footer caption -->
   <rect x="0" y="745" width="1200" height="55" fill="#0d0d14"/>
-  <text x="600" y="780" text-anchor="middle" fill="#e2e2ec" font-size="22" font-weight="600">Same Workload. Eight Owners.</text>
+  <text x="600" y="780" text-anchor="middle" fill="#e2e2ec" font-size="22" font-weight="600">Same Workload. Owned Domains.</text>
 </svg>

@@ -131,7 +131,7 @@
   <g>
     <!-- Manual side -->
     <g>
-      <rect x="60" y="490" width="540" height="80" rx="10" fill="url(#csNode)" stroke="#606080" stroke-width="1"/>
+      <rect x="60" y="490" width="540" height="92" rx="10" fill="url(#csNode)" stroke="#606080" stroke-width="1"/>
       <text x="80" y="516" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">MANUAL · OPERATOR</text>
       <text x="80" y="546" fill="#e2e2ec" font-size="16" font-weight="500">Install Proxmox on each host.</text>
       <text x="80" y="562" fill="#848494" font-size="11">≈ 30 min × 4 boxes</text>
@@ -142,10 +142,11 @@
 
     <!-- Agent side -->
     <g>
-      <rect x="620" y="490" width="520" height="80" rx="10" fill="url(#csNode)" stroke="url(#csBrand)" stroke-width="1.5" filter="url(#csGlow)"/>
+      <rect x="620" y="490" width="520" height="92" rx="10" fill="url(#csNode)" stroke="url(#csBrand)" stroke-width="1.5" filter="url(#csGlow)"/>
       <text x="640" y="516" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">AGENT TEAM · EVERYTHING ELSE</text>
-      <text x="640" y="546" fill="#e2e2ec" font-size="16" font-weight="500">Cluster, networking, secrets, deploys, hardening, kernel cron.</text>
-      <text x="640" y="562" fill="#848494" font-size="11">vault, mesh, dns, siem, vector db, graph db, postgres, image server, workflow runtime, backups, beta fleet</text>
+      <text x="640" y="540" fill="#e2e2ec" font-size="15" font-weight="500">Networking, secrets, deploys, hardening, kernel cron.</text>
+      <text x="640" y="558" fill="#848494" font-size="11">vault · mesh · dns · siem · vector db · graph db</text>
+      <text x="640" y="572" fill="#848494" font-size="11">postgres · image server · workflow runtime · backups · beta fleet</text>
     </g>
   </g>
 </svg>
