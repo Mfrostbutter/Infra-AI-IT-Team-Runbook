@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="cbTitle cbDesc" font-family="Inter, system-ui, sans-serif">
   <title id="cbTitle">Context budget: monolith vs. specialist team</title>
-  <desc id="cbDesc">Left: one agent loads a 432-line context block on every request. Right: eight specialists load small focused blocks, leaving available headroom.</desc>
+  <desc id="cbDesc">Left: one agent loads a 432-line context block on every request. Right: eleven specialists (eight infra plus a three-agent cyber sub-layer) load small focused blocks, leaving substantial available headroom.</desc>
 
   <defs>
     <radialGradient id="cbBgL" cx="0.5" cy="0.5" r="0.8">

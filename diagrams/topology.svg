@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1160" role="img" aria-labelledby="diagTitle diagDesc" font-family="Inter, system-ui, sans-serif">
   <title id="diagTitle">Personal AI Infrastructure Topology</title>
-  <desc id="diagDesc">A specialized agent team dispatches across seven infrastructure domains: mesh, vault, substrate, edge, LAN, telemetry, and workflow. Every gated change writes one entry to a central append-only journal; the docs agent reads the journal and updates canonical sources.</desc>
+  <desc id="diagDesc">A specialized agent team dispatches across seven infrastructure domains (mesh, vault, substrate, edge, LAN, telemetry, workflow) plus a three-agent cyber peer layer (security, threat-detection, vuln-management). Every gated change writes one entry to a central append-only journal; the docs agent reads the journal and updates canonical sources.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
@@ -31,7 +31,7 @@
 
   <!-- Title -->
   <text x="40" y="48" fill="#e2e2ec" font-size="22" font-weight="600">Personal AI Infrastructure</text>
-  <text x="40" y="72" fill="#848494" font-size="13" font-family="JetBrains Mono, ui-monospace, monospace">a specialized team, one dispatcher, seven domains</text>
+  <text x="40" y="72" fill="#848494" font-size="13" font-family="JetBrains Mono, ui-monospace, monospace">a specialized team, one dispatcher, seven infra domains + three cyber peers</text>
 
   <!-- Legend -->
   <g font-size="11" font-family="JetBrains Mono, ui-monospace, monospace">

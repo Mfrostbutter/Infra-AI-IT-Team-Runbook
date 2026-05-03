@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="tbTitle tbDesc" font-family="Inter, system-ui, sans-serif">
   <title id="tbTitle">Task burden: monolith vs. specialist team</title>
-  <desc id="tbDesc">Left: one agent receives every task at once, radiating amber labels. Right: eight specialists each own one or two tasks in cool blue.</desc>
+  <desc id="tbDesc">Left: one agent receives every task at once, radiating amber labels. Right: specialist agents each own one or two tasks in cool blue.</desc>
 
   <defs>
     <radialGradient id="tbHotBg" cx="0.5" cy="0.5" r="0.7">

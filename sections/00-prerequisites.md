@@ -29,7 +29,7 @@
 | 1–6 (substrate buildout) | 1–2 weekends |
 | 7 (the agent monolith) | 1 weekend |
 | 8 (the split) | 1 weekend, after at least 30 days running the monolith |
-| 9–10 (memory, anti-patterns) | continuous |
+| 9–11 (memory, journal, anti-patterns) | continuous |
 
 ## Status
 

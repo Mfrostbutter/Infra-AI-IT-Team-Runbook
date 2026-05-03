@@ -8,7 +8,7 @@
 
 The split-team architecture in [`/agents`](../agents) is the answer. It is not the starting point.
 
-If you start with seven specialists, you will:
+If you start with eleven specialists, you will:
 
 - Build four of them wrong because you did not yet know what each domain *actually* does for you on a daily basis
 - Over-engineer dispatch before you know what gets dispatched

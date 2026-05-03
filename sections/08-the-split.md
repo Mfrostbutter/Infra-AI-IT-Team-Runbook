@@ -2,13 +2,13 @@
 
 > Domain decomposition, model tiers, confirmation gates, dispatch policy.
 
-![Same workload, eight owners](../diagrams/task-burden.svg)
+![Same workload, owned domains](../diagrams/task-burden.svg)
 
 ## Why split at all
 
 Every request to a monolithic agent loads its full context. A 400-line spec for a DNS lookup wastes tokens, increases latency, and degrades reasoning. Specialists are 80–150 lines each, dispatched by intent. The split is not premature optimization — it is the only way the cost math works once you use the agents daily.
 
-This section walks the actual decomposition: the seven domains, the model-tier defaults, the confirmation gate, and the dispatch rules that make a split team behave like a single coherent operator.
+This section walks the actual decomposition: seven infra domains plus three cyber peers, the model-tier defaults, the confirmation gate, the central audit journal, and the dispatch rules that make a split team behave like a single coherent operator.
 
 ## What this section covers
 

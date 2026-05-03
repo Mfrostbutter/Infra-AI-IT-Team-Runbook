@@ -20,7 +20,7 @@ The architecture, on one page:
 
 ![Topology](diagrams/topology.svg)
 
-## Why split one agent into seven
+## Why split one agent into eleven
 
 A monolithic agent loads its full context on every request. A 400-line spec for a DNS lookup wastes tokens, increases latency, and degrades reasoning. Specialists are 80–150 lines each, dispatched by intent. The split is not premature optimization — it is the only way the cost math works once you use the agents daily.
 
@@ -39,7 +39,7 @@ Open in this order:
 1. [`sections/00-prerequisites.md`](sections/00-prerequisites.md) — what you need before anything works
 2. [`sections/07-the-agent.md`](sections/07-the-agent.md) — the story, before the mechanics
 3. Then walk `01` → `06` to build the substrate
-4. Then `08` → `10` to split, add memory, and avoid the anti-patterns
+4. Then `08` → `11` to split, add memory, add the journal, and avoid the anti-patterns
 
 Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 
