@@ -102,6 +102,12 @@ The runbook teaches the **patterns**, not vendor-specific secret sauce. The refe
 
 Swap any of these with your preferred tool — the agent specs use placeholder env vars (`<MESH_FQDN>`, `<EDGE_API_TOKEN>`, etc.), not vendor lock-ins.
 
+## Receipts
+
+![Cluster scale](diagrams/cluster-scale.svg)
+
+Three months in production. Four hypervisor nodes, eighteen containers, one VM. Weekly kernel updates on cron. The only manual step was loading Proxmox onto each host — the agent team handled cluster, networking, secrets, deploys, hardening, and the kernel cron itself.
+
 ## Status
 
 In progress. Sections drop incrementally. Subscribe at [ageniusailabs.com/runbooks/personal-ai-infrastructure](https://ageniusailabs.com/runbooks/personal-ai-infrastructure) for an email per section.

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="csTitle csDesc" font-family="Inter, system-ui, sans-serif">
+  <title id="csTitle">Cluster scale</title>
+  <desc id="csDesc">Four hypervisor nodes running eighteen containers and one VM, all provisioned by the agent team. The only manual step was installing Proxmox on each host.</desc>
+
+  <defs>
+    <linearGradient id="csBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0f"/>
+      <stop offset="1" stop-color="#0d0d14"/>
+    </linearGradient>
+    <linearGradient id="csNode" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12121c"/>
+      <stop offset="1" stop-color="#0f0f18"/>
+    </linearGradient>
+    <linearGradient id="csBrand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#9c5cff"/>
+    </linearGradient>
+    <filter id="csGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#csBg)"/>
+
+  <!-- ===== TOP: Stat ribbon ===== -->
+  <g>
+    <text x="60" y="50" fill="#848494" font-size="11" font-family="JetBrains Mono, ui-monospace, monospace" letter-spacing="0.18em" font-weight="600">WHAT THE TEAM ACTUALLY RUNS</text>
+
+    <!-- 4 stat blocks, evenly spaced -->
+    <g>
+      <text x="150" y="115" text-anchor="middle" fill="#e2e2ec" font-size="56" font-weight="700">4</text>
+      <text x="150" y="143" text-anchor="middle" fill="#7aa8ff" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">HYPERVISOR NODES</text>
+    </g>
+    <g>
+      <text x="450" y="115" text-anchor="middle" fill="#e2e2ec" font-size="56" font-weight="700">18</text>
+      <text x="450" y="143" text-anchor="middle" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">CONTAINERS</text>
+    </g>
+    <g>
+      <text x="750" y="115" text-anchor="middle" fill="#e2e2ec" font-size="56" font-weight="700">1</text>
+      <text x="750" y="143" text-anchor="middle" fill="#7aa8ff" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">VM</text>
+    </g>
+    <g>
+      <text x="1050" y="115" text-anchor="middle" fill="#e2e2ec" font-size="56" font-weight="700">3 mo</text>
+      <text x="1050" y="143" text-anchor="middle" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">IN PRODUCTION · WEEKLY KERNEL</text>
+    </g>
+  </g>
+
+  <!-- Divider -->
+  <line x1="60" y1="180" x2="1140" y2="180" stroke="#1a1a26" stroke-width="1"/>
+
+  <!-- ===== MIDDLE: 4 hypervisor nodes with stacked containers ===== -->
+  <g>
+    <!-- Each node 240 wide, 240 tall. Spaced at x=60, 320, 580, 840, 1100 -->
+
+    <!-- Node 1 -->
+    <g transform="translate(60,210)">
+      <rect width="240" height="240" rx="10" fill="url(#csNode)" stroke="#4f8cff" stroke-width="1.2"/>
+      <text x="16" y="26" fill="#7aa8ff" font-size="11" font-family="JetBrains Mono, monospace">node 01</text>
+      <text x="16" y="46" fill="#a8a8b8" font-size="11">5 services</text>
+      <!-- Container grid: 5 squares -->
+      <g>
+        <rect x="16"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+        <rect x="64"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+        <rect x="112" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="160" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="16"  y="112" width="40" height="40" rx="4" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+      </g>
+      <!-- Stat foot -->
+      <text x="16" y="190" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">cpu  1.6%</text>
+      <text x="16" y="206" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">mem  22%</text>
+      <text x="16" y="222" fill="#5fd068" font-size="10" font-family="JetBrains Mono, monospace">● online</text>
+    </g>
+
+    <!-- Node 2 -->
+    <g transform="translate(320,210)">
+      <rect width="240" height="240" rx="10" fill="url(#csNode)" stroke="#9c5cff" stroke-width="1.2"/>
+      <text x="16" y="26" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace">node 02</text>
+      <text x="16" y="46" fill="#a8a8b8" font-size="11">5 services</text>
+      <g>
+        <rect x="16"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="64"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+        <rect x="112" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#ff5a5f" stroke-width="1"/>
+        <rect x="160" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="16"  y="112" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      </g>
+      <text x="16" y="190" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">cpu  14%</text>
+      <text x="16" y="206" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">mem  34%</text>
+      <text x="16" y="222" fill="#5fd068" font-size="10" font-family="JetBrains Mono, monospace">● online</text>
+    </g>
+
+    <!-- Node 3 -->
+    <g transform="translate(580,210)">
+      <rect width="240" height="240" rx="10" fill="url(#csNode)" stroke="#4f8cff" stroke-width="1.2"/>
+      <text x="16" y="26" fill="#7aa8ff" font-size="11" font-family="JetBrains Mono, monospace">node 03</text>
+      <text x="16" y="46" fill="#a8a8b8" font-size="11">4 services</text>
+      <g>
+        <rect x="16"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+        <rect x="64"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="112" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+        <rect x="160" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+      </g>
+      <text x="16" y="190" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">cpu  12%</text>
+      <text x="16" y="206" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">mem  30%</text>
+      <text x="16" y="222" fill="#5fd068" font-size="10" font-family="JetBrains Mono, monospace">● online</text>
+    </g>
+
+    <!-- Node 4 -->
+    <g transform="translate(840,210)">
+      <rect width="240" height="240" rx="10" fill="url(#csNode)" stroke="#9c5cff" stroke-width="1.2"/>
+      <text x="16" y="26" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace">node 04</text>
+      <text x="16" y="46" fill="#a8a8b8" font-size="11">5 services + 1 VM</text>
+      <g>
+        <!-- Containers -->
+        <rect x="16"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="64"  y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="112" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="160" y="64" width="40" height="40" rx="4" fill="#1a1a26" stroke="#9c5cff" stroke-width="1"/>
+        <rect x="16"  y="112" width="40" height="40" rx="4" fill="#1a1a26" stroke="#4f8cff" stroke-width="1"/>
+        <!-- VM (different style) -->
+        <rect x="64"  y="112" width="88" height="40" rx="4" fill="#1a1a26" stroke="url(#csBrand)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="108" y="137" text-anchor="middle" fill="#7aa8ff" font-size="9" font-family="JetBrains Mono, monospace">vm</text>
+      </g>
+      <text x="16" y="190" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">cpu  9.4%</text>
+      <text x="16" y="206" fill="#848494" font-size="10" font-family="JetBrains Mono, monospace">mem  40%</text>
+      <text x="16" y="222" fill="#5fd068" font-size="10" font-family="JetBrains Mono, monospace">● online</text>
+    </g>
+  </g>
+
+  <!-- ===== BOTTOM: Manual vs Agent-built ===== -->
+  <g>
+    <!-- Manual side -->
+    <g>
+      <rect x="60" y="490" width="540" height="80" rx="10" fill="url(#csNode)" stroke="#606080" stroke-width="1"/>
+      <text x="80" y="516" fill="#848494" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">MANUAL · OPERATOR</text>
+      <text x="80" y="546" fill="#e2e2ec" font-size="16" font-weight="500">Install Proxmox on each host.</text>
+      <text x="80" y="562" fill="#848494" font-size="11">≈ 30 min × 4 boxes</text>
+    </g>
+
+    <!-- Arrow -->
+    <text x="610" y="540" text-anchor="middle" fill="#7aa8ff" font-size="20" font-weight="600">→</text>
+
+    <!-- Agent side -->
+    <g>
+      <rect x="620" y="490" width="520" height="80" rx="10" fill="url(#csNode)" stroke="url(#csBrand)" stroke-width="1.5" filter="url(#csGlow)"/>
+      <text x="640" y="516" fill="#9c5cff" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="0.16em">AGENT TEAM · EVERYTHING ELSE</text>
+      <text x="640" y="546" fill="#e2e2ec" font-size="16" font-weight="500">Cluster, networking, secrets, deploys, hardening, kernel cron.</text>
+      <text x="640" y="562" fill="#848494" font-size="11">vault, mesh, dns, siem, vector db, graph db, postgres, image server, workflow runtime, backups, beta fleet</text>
+    </g>
+  </g>
+</svg>
