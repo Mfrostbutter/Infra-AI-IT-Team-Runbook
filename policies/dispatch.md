@@ -14,15 +14,22 @@ Specialist agents do not reliably dispatch to other specialists. Routing happens
 | `infra-telemetry` | observability: logs, alerts, agent enrollment, IR triage |
 | `infra-flow` | workflow runtime: scheduled jobs, webhooks, automation graphs |
 | `infra-docs` | docs and changelog: reads journal, updates canonical sources |
+| `infra-security` | security triage, exposure review, hardening (recommends peers, parent invokes) |
+| `infra-threat-detection` | active alert triage, telemetry correlation, hypothesis generation |
+| `infra-vuln-management` | CVE prioritization, patch sequencing, hardening backlog |
 
 ## Routing rules
 
 1. **Single domain → one specialist.** Match the request's primary surface to the table above.
 2. **Multi-domain incidents** default to `infra-substrate` as coordinator unless the obvious root cause is edge or mesh.
-3. **Security-shaped requests** (incident, exposure, hardening, suspicious telemetry) → `infra-telemetry` first. If scope demands deeper IR, the parent invokes additional specialists as peers.
+3. **Security-shaped requests** (incident, exposure, hardening, suspicious telemetry) → `infra-security` first. `infra-security` recommends a peer (`infra-threat-detection` for active alerts, `infra-vuln-management` for CVE/patch work). The parent invokes the recommended peer. `infra-telemetry` provides observability data; cyber agents do the security work.
 4. **Health checks and diagnostics** of a service belong to the infra specialist that owns its domain, not to a separate "executor" agent.
 5. **Reads are cheap, writes have gates.** Read paths can chain freely. Write paths stop at the confirmation gate.
 6. **Docs follow journal entries.** After a gated action lands and the journal entry is written, the parent invokes `infra-docs` to read recent entries and update canonical sources. Doc updates are a separate task, not a side effect inside the original specialist's run.
+
+## Cyber sub-routing
+
+`infra-threat-detection` and `infra-vuln-management` are **peer specialists**, not children of `infra-security`. The parent invokes whichever fits the task. `infra-security` may *recommend* a sub-route in its output; the parent then invokes the recommended peer. A specialist that thinks it can call its peers becomes a router, and a router that owns a domain becomes a monolith.
 
 ## Decision-only router (optional)
 

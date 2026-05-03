@@ -14,7 +14,7 @@ You will end with:
 - Machine-identity secrets, no `.env` on disk
 - Idempotent read paths in every domain
 - A central, append-only journal that captures every change the team makes
-- Eight specialized agents (plus a routing wrapper), dispatched by intent, that get smarter from your daily use
+- Eleven specialized agents (eight infra + three cyber peers, plus a routing wrapper), dispatched by intent, that get smarter from your daily use
 
 The architecture, on one page:
 
@@ -30,7 +30,7 @@ A monolithic agent loads its full context on every request. A 400-line spec for 
 | 2 | `claude-sonnet-*` | planned changes, multi-step coordination |
 | 3 | `claude-opus-*` | parent-invoked only, multi-domain incidents |
 
-Default fleet: **6× haiku · 3× sonnet · 0× opus** (opus reserved for incident command).
+Default fleet: **7× haiku · 5× sonnet · 0× opus** (opus reserved for incident command).
 
 ## How to read this repo
 
@@ -73,7 +73,10 @@ Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 │   ├── infra-lan.md
 │   ├── infra-telemetry.md
 │   ├── infra-flow.md
-│   └── infra-docs.md
+│   ├── infra-docs.md
+│   ├── infra-security.md
+│   ├── infra-threat-detection.md
+│   └── infra-vuln-management.md
 ├── policies/                    # cross-cutting rules
 │   ├── confirmation-gate.md
 │   ├── dispatch.md
