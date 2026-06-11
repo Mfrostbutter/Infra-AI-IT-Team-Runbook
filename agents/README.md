@@ -12,7 +12,7 @@ Each agent owns exactly one infrastructure domain. They are 80–150 lines, runb
 | [`infra-lan`](infra-lan.md) | sonnet | internal network |
 | [`infra-telemetry`](infra-telemetry.md) | sonnet | observability and IR |
 | [`infra-flow`](infra-flow.md) | haiku | workflow runtime |
-| [`infra-docs`](infra-docs.md) | haiku | journal-driven docs and changelog |
+| [`infra-docs`](infra-docs.md) | haiku | journal-driven docs, drift reconciliation, changelog |
 | [`infra-security`](infra-security.md) | sonnet | security triage, exposure review, hardening |
 | [`infra-threat-detection`](infra-threat-detection.md) | sonnet | active alert triage, telemetry correlation |
 | [`infra-vuln-management`](infra-vuln-management.md) | haiku | CVE prioritization, patch sequencing |

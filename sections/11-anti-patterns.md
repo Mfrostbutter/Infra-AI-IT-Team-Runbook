@@ -24,6 +24,10 @@ The shortlist (full content drops later):
 
 10. **No "stop the work" command.** Every agent runtime should have a kill switch the operator knows by heart. Build it before you need it.
 
+11. **Trusting the journal as a complete record.** The journal only captures what the team authored. A service that dies on its own, a hand-made container, a direct vault edit: none of them journal. Without the drift detection in [section 12](12-drift-detection.md), your docs quietly diverge from reality and the first time you notice is during an incident.
+
+12. **An auditor that fixes what it audits.** A drift sweep that silently rewrites canonical docs or restarts services is not an auditor, it is an unreviewed actor. Detection and correction belong on opposite sides of a gate. Report by default; self-heal only additively, only after review.
+
 ## Status
 
 Stub. Full content drops next.

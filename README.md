@@ -39,7 +39,7 @@ Open in this order:
 1. [`sections/00-prerequisites.md`](sections/00-prerequisites.md) — what you need before anything works
 2. [`sections/07-the-agent.md`](sections/07-the-agent.md) — the story, before the mechanics
 3. Then walk `01` → `06` to build the substrate
-4. Then `08` → `11` to split, add memory, add the journal, and avoid the anti-patterns
+4. Then `08` → `12` to split, add memory, add the journal, avoid the anti-patterns, and keep the docs honest with drift detection
 
 Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 
@@ -62,7 +62,8 @@ Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 │   ├── 08-the-split.md
 │   ├── 09-the-memory.md
 │   ├── 10-the-journal.md
-│   └── 11-anti-patterns.md
+│   ├── 11-anti-patterns.md
+│   └── 12-drift-detection.md
 ├── agents/                      # specialist agent specs
 │   ├── README.md
 │   ├── infra-router.md
@@ -81,6 +82,7 @@ Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 │   ├── confirmation-gate.md
 │   ├── dispatch.md
 │   ├── audit-trail.md
+│   ├── drift-detection.md
 │   └── model-routing-policy.md
 └── examples/                    # ready-to-adapt configs
     └── README.md

@@ -13,7 +13,7 @@ Specialist agents do not reliably dispatch to other specialists. Routing happens
 | `infra-lan` | internal network: switches, APs, internal resolvers |
 | `infra-telemetry` | observability: logs, alerts, agent enrollment, IR triage |
 | `infra-flow` | workflow runtime: scheduled jobs, webhooks, automation graphs |
-| `infra-docs` | docs and changelog: reads journal, updates canonical sources |
+| `infra-docs` | docs and changelog: reads journal, runs the drift sweep, reconciles canonical sources to reality |
 | `infra-security` | security triage, exposure review, hardening (recommends peers, parent invokes) |
 | `infra-threat-detection` | active alert triage, telemetry correlation, hypothesis generation |
 | `infra-vuln-management` | CVE prioritization, patch sequencing, hardening backlog |
@@ -26,6 +26,7 @@ Specialist agents do not reliably dispatch to other specialists. Routing happens
 4. **Health checks and diagnostics** of a service belong to the infra specialist that owns its domain, not to a separate "executor" agent.
 5. **Reads are cheap, writes have gates.** Read paths can chain freely. Write paths stop at the confirmation gate.
 6. **Docs follow journal entries.** After a gated action lands and the journal entry is written, the parent invokes `infra-docs` to read recent entries and update canonical sources. Doc updates are a separate task, not a side effect inside the original specialist's run.
+7. **Drift sweeps route to `infra-docs`.** The scheduled drift sweep (`policies/drift-detection.md`) is `infra-docs` work. Real findings that disagree with reality become `infra-docs` doc reconciliations; findings where reality itself is wrong route to the owning infra specialist. The sweep reports; the parent routes.
 
 ## Cyber sub-routing
 
