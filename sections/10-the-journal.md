@@ -97,7 +97,7 @@ During an incident, the journal and the SIEM answer different halves of one ques
 
 `infra-telemetry` reads the journal during triage: pull every team change in the incident window, line it up against the SIEM events, and the gap between them is the lead. An alert at 02:14 with no journal entry near it is not the team's doing. An alert at 02:14 with an `infra-edge` write at 02:13 is a change to roll back first and ask questions after.
 
-This is also why the drift sweep in [section 12](12-drift-detection.md) stores its rows in the same audit store: unauthored change (drift) and authored change (journal) are queryable side by side.
+This is also why the drift sweep in [section 11](11-the-drift-sweep.md) stores its rows in the same audit store: unauthored change (drift) and authored change (journal) are queryable side by side.
 
 ## Backup discipline
 
@@ -110,4 +110,4 @@ The journal is the team's long-term memory. Losing it loses every "why did we do
 
 ## Status
 
-Core content complete. Pairs with [section 12 · drift detection](12-drift-detection.md), which checks reality the journal did not author.
+Core content complete. Pairs with [section 11 · the drift sweep](11-the-drift-sweep.md), which checks reality the journal did not author.

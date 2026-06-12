@@ -67,5 +67,5 @@ Neither replaces the other. Run both.
 
 - [`audit-trail.md`](audit-trail.md) — the journal and audit store
 - [`confirmation-gate.md`](confirmation-gate.md) — the gate that doc corrections pass through
-- [`../sections/12-drift-detection.md`](../sections/12-drift-detection.md) — the narrative walkthrough
+- [`../sections/11-the-drift-sweep.md`](../sections/11-the-drift-sweep.md) — the narrative walkthrough
 - [`../agents/infra-docs.md`](../agents/infra-docs.md) — the specialist that reconciles findings

@@ -1,4 +1,4 @@
-# 11 · Anti-patterns
+# 13 · Anti-patterns
 
 > Things that look reasonable, then break things. Read this before you ship.
 
@@ -24,9 +24,13 @@ The shortlist (full content drops later):
 
 10. **No "stop the work" command.** Every agent runtime should have a kill switch the operator knows by heart. Build it before you need it.
 
-11. **Trusting the journal as a complete record.** The journal only captures what the team authored. A service that dies on its own, a hand-made container, a direct vault edit: none of them journal. Without the drift detection in [section 12](12-drift-detection.md), your docs quietly diverge from reality and the first time you notice is during an incident.
+11. **Trusting the journal as a complete record.** The journal only captures what the team authored. A service that dies on its own, a hand-made container, a direct vault edit: none of them journal. Without the drift sweep in [section 11](11-the-drift-sweep.md), your docs quietly diverge from reality and the first time you notice is during an incident.
 
 12. **An auditor that fixes what it audits.** A drift sweep that silently rewrites canonical docs or restarts services is not an auditor, it is an unreviewed actor. Detection and correction belong on opposite sides of a gate. Report by default; self-heal only additively, only after review.
+
+13. **Trusting tool output as instructions.** Everything an agent retrieves (tool output, web pages, tickets, scraped data) is untrusted data, never a command. An agent that acts on "ignore previous instructions" buried in a fetched page is one hostile page away from running an attacker's plan with your credentials. See [section 12](12-the-guardrails.md).
+
+14. **No prompt-integrity check.** If you never hash your agent specs against a committed baseline, a spec edited outside the normal flow (drift or tampering) runs unnoticed. The hash is milliseconds and catches it before the next run.
 
 ## Status
 

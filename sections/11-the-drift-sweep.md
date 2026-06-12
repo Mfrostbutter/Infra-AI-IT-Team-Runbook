@@ -1,6 +1,6 @@
-# 12 · Drift detection
+# 11 · The Drift Sweep + Docs Agent
 
-> The journal records what the team did. Drift detection finds what changed without the team.
+> The journal records what the team did. The drift sweep finds what changed without the team, and the docs agent reconciles the canonical sources to match.
 
 ## The gap the journal cannot see
 
@@ -25,12 +25,11 @@ The reference auditor runs a handful of independent detectors, each comparing a 
 | Reachability | declared services + datastores vs live TCP / health probes | a service that died, a moved port, a missing vector collection |
 | Doc staleness | `last_updated` stamps in canonical docs vs a max age | docs no one has reconciled in N days |
 | Agent registry | deployed agent spec files vs the registry doc | a specialist running but undocumented, or documented but gone |
-| Prompt integrity | a hash of every agent spec vs a committed baseline, plus a canary token | a spec changed outside the normal flow (drift or tampering) |
 | Secret inventory | secret **names** at a vault path vs a declared manifest (names only, never values) | a secret renamed or deleted out from under its consumers |
 
 Each detector emits structured findings with a severity. A finding is `info` (live but undocumented, usually benign), `low`/`medium`/`high` (a real gap), and the run is `clean` only when no real finding exists. Info-only is reported but does not raise the alarm.
 
-The prompt-integrity detector is where drift detection meets the prompt-injection defense: the same canary token your specs carry to prove the system prompt is intact is checked here on a schedule. A spec whose hash moved, or whose canary went missing, is flagged before it runs again.
+One more check rides the same weekly sweep: a prompt-integrity hash of every agent spec and policy. Mechanically it is just another detector on this schedule, but it belongs to the guardrails story rather than the docs-vs-reality story, so it is covered in [section 12](12-the-guardrails.md). A spec whose hash moved without a matching baseline update is flagged before it runs again.
 
 ## Correction is tiered
 
@@ -62,7 +61,7 @@ When a sweep finds real drift, the operator (or a follow-up `infra-docs` invocat
 
 ```
 scheduled trigger
-   └─ drift sweep (reachability · docs · registry · prompts · secrets)
+   └─ drift sweep (reachability · docs · registry · secrets · prompt-integrity §12)
         ├─ markdown report  ──►  knowledge base / audits
         ├─ audit-store rows ──►  queryable next to the journal
         └─ chat summary     ──►  operator
@@ -77,3 +76,4 @@ The sweep does not dispatch agents. It reports. The parent decides whether a fin
 - [`policies/audit-trail.md`](../policies/audit-trail.md) — the journal the sweep stores rows beside
 - [`agents/infra-docs.md`](../agents/infra-docs.md) — the specialist that reconciles findings
 - [`sections/10-the-journal.md`](10-the-journal.md) — the record the sweep complements
+- [`sections/12-the-guardrails.md`](12-the-guardrails.md) — where the prompt-integrity check that rides this sweep is covered

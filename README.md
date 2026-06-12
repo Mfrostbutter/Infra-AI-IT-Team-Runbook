@@ -14,6 +14,7 @@ You will end with:
 - Machine-identity secrets, no `.env` on disk
 - Idempotent read paths in every domain
 - A central, append-only journal that captures every change the team makes
+- A weekly drift sweep plus prompt-integrity and injection guardrails that keep your docs and your specs honest
 - Eleven specialized agents (eight infra + three cyber peers, plus a routing wrapper), dispatched by intent, that get smarter from your daily use
 
 The architecture, on one page:
@@ -39,7 +40,7 @@ Open in this order:
 1. [`sections/00-prerequisites.md`](sections/00-prerequisites.md) — what you need before anything works
 2. [`sections/07-the-agent.md`](sections/07-the-agent.md) — the story, before the mechanics
 3. Then walk `01` → `06` to build the substrate
-4. Then `08` → `12` to split, add memory, add the journal, avoid the anti-patterns, and keep the docs honest with drift detection
+4. Then `08` → `13` to split, add memory, add the journal, run the drift sweep, set the guardrails, and avoid the anti-patterns
 
 Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 
@@ -62,8 +63,9 @@ Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 │   ├── 08-the-split.md
 │   ├── 09-the-memory.md
 │   ├── 10-the-journal.md
-│   ├── 11-anti-patterns.md
-│   └── 12-drift-detection.md
+│   ├── 11-the-drift-sweep.md
+│   ├── 12-the-guardrails.md
+│   └── 13-anti-patterns.md
 ├── agents/                      # specialist agent specs
 │   ├── README.md
 │   ├── infra-router.md
@@ -83,6 +85,7 @@ Cost-breakdown appendix and example configs live under [`examples/`](examples/).
 │   ├── dispatch.md
 │   ├── audit-trail.md
 │   ├── drift-detection.md
+│   ├── injection-defense.md
 │   └── model-routing-policy.md
 └── examples/                    # ready-to-adapt configs
     └── README.md
